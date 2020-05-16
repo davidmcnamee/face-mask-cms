@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "product",
+  "info": {
+    "name": "Products"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "photo": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "stock": {
+      "type": "integer"
+    },
+    "name": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
+    },
+    "path": {
+      "type": "uid",
+      "targetField": "name"
+    }
+  }
+}
